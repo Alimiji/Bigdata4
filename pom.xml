@@ -28,6 +28,8 @@
                 <artifactId>maven-scala-plugin</artifactId>
                 <version>2.11</version>
             </plugin>
+            <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+
 
 
         </plugins>
@@ -42,6 +44,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spark.hive.version>2.2.0</spark.hive.version>
         <log4j.version>2.16.0</log4j.version>
+        <spark.core.version>2.2.0</spark.core.version>
+        <spark.sql.version>2.2.0</spark.sql.version>
+        <spark.streaming.version>2.2.0</spark.streaming.version>
+        <scala.langage.version>2.11.8</scala.langage.version>
+        <scala.compiler.version>2.15.2</scala.compiler.version>
+        <junit.version>4.13.1</junit.version>
+        <scalatest.version>3.1.1</scalatest.version>
     </properties>
 
 
@@ -49,7 +58,10 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+
+
+
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
 
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -110,6 +122,12 @@
             <artifactId>spark-hive_2.12</artifactId>
             <version>2.4.8</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version> 2.11.12 </version>
         </dependency>
 
 

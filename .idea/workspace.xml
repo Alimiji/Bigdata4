@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bdffad8-d96d-420c-9b4a-91c7a292d418" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/debug.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/debug_pom.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/devop_session_spark.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/devop_session_spark.scala" afterDir="false" />
@@ -137,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662484050455</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First commit">
+      <created>1662569085355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662569085355</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,17 +163,25 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint enabled="true" suspend="THREAD" type="java-exception">
           <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="5" />
         </breakpoint>
       </breakpoints>
+      <breakpoints-defaults>
+        <breakpoint suspend="THREAD" type="java-exception" />
+      </breakpoints-defaults>
+      <breakpoints-dialog>
+        <breakpoints-dialog>
+          <selected-grouping-rules>
+            <grouping-rule id="by-file" />
+          </selected-grouping-rules>
+        </breakpoints-dialog>
+      </breakpoints-dialog>
       <default-breakpoints>
-        <breakpoint enabled="true" type="java-exception" />
+        <breakpoint type="java-exception">
+          <dependency id="0" />
+        </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
   </component>

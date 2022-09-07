@@ -1,12 +1,16 @@
+import java.io.FileNotFoundException
+
 import org.apache.log4j.LogMF.trace
 import org.apache.log4j.{LogManager, Logger}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql._
+import org.apache.spark.storage.StorageLevel
+
 
 import org.apache.spark.sql.hive
 import org.apache.spark.sql.catalyst.util.DropMalformedMode._
 
-import java.io.FileNotFoundException
+
 
 
 object devop_session_spark {
@@ -15,7 +19,10 @@ object devop_session_spark {
 
 
   def main(args: Array[String]): Unit = {
-    val sc = Session_Spark(Env = true).sparkContext
+
+    val session_spk = Session_Spark(true)
+    val sc = session_spk.sparkContext
+    import session_spk.implicits._ // Cette importation est indispensable pour la création d'un dataframe
     sc.setLogLevel("OFF")
     val rdd_test : RDD[String] = sc.parallelize(List(" alain ", " juvenal ", " julien ", " ama ", " toto "))
     //rdd_test.foreach{ l => println(l)}
@@ -71,14 +78,14 @@ object devop_session_spark {
     val rdd_map = rdd_transform.flatMap(x => x.split(" ")) // Pour appliquer le split sur chaque element du rdd
                                                                 // de préference utiliser le flatmapp() au lieu de map
                                                                   // car ca ne fonctionne pas avec le map
-    rdd_transform.foreach(l => println(l))
-    println(" ")
-    rdd_transform.foreach(l => println(l.length))
+ //   rdd_transform.foreach(l => println(l))
+   // println(" ")
+  //  rdd_transform.foreach(l => println(l.length))
 
 
     println(" ")
 
-    rdd_map.foreach(l => println(l.length))
+   // rdd_map.foreach(l => println(l.length))
 
   //  println("Affichage des elements de rdd map")
 
@@ -88,33 +95,64 @@ object devop_session_spark {
     //println("Nombre d'element du rdd transform: "+ rdd_transform.count())
    // println("Nombre d'element du rdd map: "+ rdd_map.count())
 
-    println(" ")
+  //  println(" ")
 
     val rdd6 = rdd_map.map(m => (m, m.length))
 
-    rdd6.foreach(l => println(l))
+   // rdd6.foreach(l => println(l))
 
     println(" ")
 
     val rdd7 = rdd_transform.map(m => (m, m.length))
 
-    rdd7.foreach(l => println(l))
+    //rdd7.foreach(l => println(l))
 
     val rdd_fm = rdd_transform.flatMap(x => x.split(" ")).map(y => (y, 1))
 
     // rdd_fm.foreach(l => println(l))
 
     // Regroupement des mots
-    println(" ")
-    println("Regroupement des mots")
+   // println(" ")
+   // println("Regroupement des mots")
+
+   // rdd_fm.foreach(l => println(l))
 
    // rdd_fm.foreach(m => println(m))
 
-    println(" ")
+    // println(" ")
 
 
-    val rdd_reduced = rdd_fm.reduceByKey(_ + _)
-    rdd_reduced.foreach(m => println(m))
+    //val rdd_reduced = rdd_fm.reduceByKey((x, y) => x)
+
+    val rdd_reduced2 = rdd_fm.reduce((x, y) => x )
+   val rdd_reduced = rdd_fm.reduceByKey((x, y) => (x + y))
+  //  println("RDD Reduce: ")
+
+    //rintln(rdd_reduced2.toString())
+
+    //println("RDD Reduce: ")
+
+   //  println("RDD Reduce key: ")
+
+   // rdd_reduced.foreach(l => println(l))
+
+    //print(rdd_reduced.count())
+
+   // print(rdd_reduced.toString().toList)
+
+   // println("RDD Reduce key: ")
+
+    val test_map = Map("nom" -> "Julien", "prenom" -> "chokogoue", "age" -> 40)
+
+    //test_map.foreach(l => println(l))
+
+    // Creation d'un dataframe
+
+
+
+    val Df: DataFrame = rdd_fm.toDF()
+
+  println(Df.toString())
 
 
 
