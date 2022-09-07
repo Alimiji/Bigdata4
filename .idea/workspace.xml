@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bdffad8-d96d-420c-9b4a-91c7a292d418" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/devop_session_spark.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/debug.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/debug_pom.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/HelloWorldBigData.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/HelloWorldBigData.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/devop_session_spark.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/devop_session_spark.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +27,15 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-catalyst_2.11/2.4.8/spark-catalyst_2.11-2.4.8-sources.jar!/org/apache/spark/sql/catalyst/expressions/UnsafeRow.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-catalyst_2.11/2.4.8/spark-catalyst_2.11-2.4.8-sources.jar!/org/apache/spark/sql/types/StringType.scala" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -122,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661658975274</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First commit">
+      <created>1662484050455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662484050455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +161,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
       <default-breakpoints>
